@@ -21,8 +21,6 @@ home_page(posts);
 fs.readdirSync(config.dev.jsdir).map(function (file) {
   const write_js_path = config.dev.outjsdir + file;
   const read_js_path = config.dev.jsdir + file;
-  console.log(write_js_path);
-  console.log(read_js_path);
   fs.writeFileSync(write_js_path, fs.readFileSync(read_js_path));
   return file;
 });
