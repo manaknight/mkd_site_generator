@@ -1,0 +1,16 @@
+{
+  "name": "mkd_site_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "private",
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "marked": "^0.8.2"
+  }
+}
