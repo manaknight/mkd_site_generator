@@ -1,6 +1,6 @@
 const config = {
   blogDescription: '',
-  blogName: '',
+  blogName: 'Ryan Wong',
   currentPage: '',
   menu: [],
   dev: {

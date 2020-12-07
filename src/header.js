@@ -44,6 +44,9 @@ module.exports = config => `
          <li class="nav-item ${config.currentPage == 'link' ? 'active' : ''}">
             <a class="nav-link" href="#">Link</a>
          </li>
+         <li class="nav-item ${config.currentPage == 'blog' ? 'active' : ''}">
+            <a class="nav-link" href="#">Blog</a>
+         </li>
          <li class="nav-item ${config.currentPage == 'disabled' ? 'active' : ''}">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
          </li>

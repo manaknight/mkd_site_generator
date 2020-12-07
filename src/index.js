@@ -1,20 +1,23 @@
 const fs = require("fs");
 
-// const postMethods = require("./posts");
+const postMethods = require("./posts");
 const config = require("./config");
 const home_page = require("./home_page");
-const posts = [];
-// const posts = fs
-//   .readdirSync(config.dev.postsdir)
-//   .map(post => post.slice(0, -3))
-//   .map(post => postMethods.createPost(post))
-//   .sort(function(a, b) {
-//     return b.attributes.date - a.attributes.date;
-//   });
 
-// if (!fs.existsSync(config.dev.outdir)) fs.mkdirSync(config.dev.outdir);
+const posts = fs
+  .readdirSync(config.dev.postsdir)
+  .map(post => post.slice(0, -3))
+  .map(post => postMethods.createPost(post))
+  .sort(function (a, b) {
+    return b.attributes.date - a.attributes.date;
+  });
 
-// postMethods.createPosts(posts);
+if (!fs.existsSync(config.dev.outdir)) {
+  fs.mkdirSync(config.dev.outdir);
+}
+
+postMethods.createPosts(posts);
+
 home_page(posts);
 
 //Copy in JS into repo
