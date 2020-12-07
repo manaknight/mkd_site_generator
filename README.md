@@ -20,4 +20,4 @@
 
 9.We gitignore all html/js/css in public folder so when we go live, it will need to be generated
 
-10.REMEMBER to install `lit-html` VSCODE extension. This allow autocomplete inside js
+10.REMEMBER to install `lit-html` VSCODE extension. This allow autocomplete inside js. Add html before \` . This way it autocompletes. Then remove it when you save.

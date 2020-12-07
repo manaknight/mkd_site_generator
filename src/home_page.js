@@ -5,7 +5,7 @@ config.currentPage = 'home';
 const header = require("./header");
 const footer = require("./footer");
 
-const home_page_str = posts => html`
+const home_page_str = posts => `
   ${header(config)}
   <p> Home Page</p>
   ${footer(config)}

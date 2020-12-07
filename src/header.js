@@ -1,7 +1,7 @@
 const config = require("./config");
 const fs = require("fs");
 
-module.exports = config => html`
+module.exports = config => `
 <!DOCTYPE html>
 <html lang="en">
 

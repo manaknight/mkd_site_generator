@@ -1,7 +1,7 @@
 let config = require("./config");
 const fm = require("front-matter");
 const fs = require("fs");
-const marked = require("./old/marked");
+const marked = require("marked");
 const header = require("./header");
 const footer = require("./footer");
 
@@ -17,7 +17,7 @@ function convert_fields(data) {
   return data;
 }
 
-const post_html = data => html`
+const post_html = data => `
 ${header(Object.assign(config, convert_fields(data)))}
 <div class="container">
   <div class="row">
