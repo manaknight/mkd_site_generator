@@ -1,0 +1,1 @@
+cp -R public /var/www/manaknightdigital.com/htdocs;

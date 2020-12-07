@@ -3,3 +3,4 @@ public/**/*.html
 public/**/*.js
 public/**/*.css
 node_modules
+copyToProd.sh
