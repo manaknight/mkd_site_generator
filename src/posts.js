@@ -17,25 +17,25 @@ function convert_fields(data) {
   return data;
 }
 
-const post_html = data => `
+const post_html = data => html`
 ${header(Object.assign(config, convert_fields(data)))}
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 my-5">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 my-5">
       <header class="my-5">
-          <a href="/">Go back home</a>
-          <p>—</p>
+        <a href="/">Go back home</a>
+        <p>—</p>
       </header>
 
       <div class="content">
-          <h1>${data.attributes.title}</h1>
-          <p>${new Date(parseInt(data.attributes.date)).toDateString()}</p>
-          <hr />
-          ${data.body}
-      </div>
+        <h1>${data.attributes.title}</h1>
+        <p>${new Date(parseInt(data.attributes.date)).toDateString()}</p>
+        <hr />
+        ${data.body}
       </div>
     </div>
   </div>
+</div>
 ${footer(Object.assign(config, convert_fields(data)))}
 `;
 

@@ -1,56 +1,62 @@
 const config = require("./config");
 const fs = require("fs");
 
-module.exports = config => `
+module.exports = config => html`
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="${config.blogDescription}" />
-    <meta name="author" content="">
-    <title>${config.blogName}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" crossorigin="anonymous"></script>
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="${config.blogDescription}" />
+   <meta name="author" content="">
+   <title>${config.blogName}</title>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      crossorigin="anonymous">
+   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" crossorigin="anonymous"></script>
+   <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" crossorigin="anonymous"></script> -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css">
 
-    <!-- Favicons -->
+   <!-- Favicons -->
 
-    <link rel="apple-touch-icon" href="/assets/image/favicions.ico/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/assets/image/favicions.ico/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/assets/image/favicions.ico/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/assets/image/favicions.ico/manifest.json">
-    <link rel="mask-icon" href="/assets/image/favicions.ico/safari-pinned-tab.svg" color="#563d7c">
-    <link rel="icon" href="/assets/image/favicions.ico/favicon.ico">
-    <meta name="msapplication-config" content="/assets/image/favicions.ico/browserconfig.xml">
-    <meta name="theme-color" content="#563d7c">
+   <link rel="apple-touch-icon" href="/assets/image/favicions.ico/apple-touch-icon.png" sizes="180x180">
+   <link rel="icon" href="/assets/image/favicions.ico/favicon-32x32.png" sizes="32x32" type="image/png">
+   <link rel="icon" href="/assets/image/favicions.ico/favicon-16x16.png" sizes="16x16" type="image/png">
+   <link rel="manifest" href="/assets/image/favicions.ico/manifest.json">
+   <link rel="mask-icon" href="/assets/image/favicions.ico/safari-pinned-tab.svg" color="#563d7c">
+   <link rel="icon" href="/assets/image/favicions.ico/favicon.ico">
+   <meta name="msapplication-config" content="/assets/image/favicions.ico/browserconfig.xml">
+   <meta name="theme-color" content="#563d7c">
 
-     <!-- My Favicons -->
+   <!-- My Favicons -->
 </head>
+
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-   <a class="navbar-brand" href="#">Navbar</a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-   <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-         <li class="nav-item ${config.currentPage == 'home' ? 'active' : ''}">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-         </li>
-         <li class="nav-item ${config.currentPage == 'link' ? 'active' : ''}">
-            <a class="nav-link" href="#">Link</a>
-         </li>
-         <li class="nav-item ${config.currentPage == 'blog' ? 'active' : ''}">
-            <a class="nav-link" href="#">Blog</a>
-         </li>
-         <li class="nav-item ${config.currentPage == 'disabled' ? 'active' : ''}">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-         </li>
-      </ul>
-   </div>
-</nav>
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+         aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+         <ul class="navbar-nav mr-auto">
+            <li class="nav-item ${config.currentPage == 'home' ? 'active' : ''}">
+               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ${config.currentPage == 'link' ? 'active' : ''}">
+               <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item ${config.currentPage == 'blog' ? 'active' : ''}">
+               <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item ${config.currentPage == 'disabled' ? 'active' : ''}">
+               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
 `;
